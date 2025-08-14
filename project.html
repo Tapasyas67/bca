@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel Spice Garden — Menu</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --accent: #eab308; /* saffron */
+      --accent-ink: #1f2937;
+      --chip: #fef3c7;
+      --border: #e2e8f0;
+      --shadow: 0 10px 25px rgba(2, 6, 23, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--ink);
+      background: radial-gradient(1200px 600px at 80% -10%, #fff7ed 0%, transparent 60%),
+                  radial-gradient(1000px 500px at -10% 20%, #edf2ff 0%, transparent 55%),
+                  var(--bg);
+    }
+
+    .wrapper {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+    .menu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    /* Header */
+    .menu-hero {
+      position: relative;
+      padding: 28px 24px 24px;
+      background: linear-gradient(135deg, #fff7ed, #fffbeb);
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .brand-logo {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: conic-gradient(from 120deg, #f59e0b, #facc15, #fde68a, #f59e0b);
+      box-shadow: inset 0 0 0 3px #fff, 0 6px 14px rgba(0,0,0,.08);
+      display: grid; place-items: center;
+      font-weight: 800; color: var(--accent-ink);
+    }
+    .brand h1 {
+      font-size: 1.5rem; line-height: 1.2; margin: 0;
+    }
+    .tagline { color: var(--muted); margin: 2px 0 0; font-size: .95rem; }
+
+    .badges { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .badge {
+      background: var(--chip);
+      border: 1px dashed #f59e0b;
+      color: #92400e;
+      padding: 6px 10px; border-radius: 999px; font-size: .85rem;
+    }
+
+    /* Sections */
+    .sections { padding: 10px 16px 22px; }
+
+    .section {
+      margin-top: 18px; background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+    }
+    .section h2 {
+      margin: 0; font-size: 1.1rem; letter-spacing: .2px;
+      padding: 14px 16px; background: #f8fafc; border-bottom: 1px solid var(--border);
+    }
+
+    .items { display: grid; grid-template-columns: 1fr; }
+    @media (min-width: 640px) {
+      .items { grid-template-columns: 1fr 1fr; }
+    }
+
+    .item { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 12px 16px; align-items: start; }
+    .item + .item { border-top: 1px dashed var(--border); }
+
+    .item-title { font-weight: 700; }
+    .item-desc { color: var(--muted); font-size: .9rem; margin-top: 2px; }
+    .price { font-weight: 800; letter-spacing: .2px; }
+
+    .veg-dot, .nonveg-dot {
+      display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px;
+    }
+    .veg-dot { background: #16a34a; }
+    .nonveg-dot { background: #dc2626; }
+
+    .footer {
+      padding: 18px 20px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+    }
+    .cta {
+      appearance: none; border: none; cursor: pointer;
+      background: linear-gradient(180deg, #facc15, #f59e0b);
+      color: #1f2937; font-weight: 800; padding: 10px 16px; border-radius: 999px;
+      box-shadow: 0 6px 14px rgba(245, 158, 11, .35);
+    }
+    .note { color: var(--muted); font-size: .88rem; }
+
+    /* Small print */
+    .fineprint { font-size: .8rem; color: var(--muted); text-align: center; padding: 22px; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="menu-card" role="article" aria-label="Hotel Spice Garden Menu">
+      <header class="menu-hero">
+        <div class="brand">
+          <div class="brand-logo" aria-hidden="true">SG</div>
+          <div>
+            <h1>Hotel Spice Garden</h1>
+            <p class="tagline">Authentic flavors • Fresh ingredients • Quick service</p>
+          </div>
+        </div>
+        <div class="badges" aria-label="Highlights">
+          <span class="badge">Chef's Specials</span>
+          <span class="badge">100% Hygienic</span>
+          <span class="badge">Free Home Delivery</span>
+        </div>
+      </header>
+
+      <main class="sections">
+        <!-- Starters -->
+        <section class="section" aria-labelledby="starters">
+          <h2 id="starters">Starters</h2>
+          <div class="items">
+            <div class="item">
+              <div>
+                <div class="item-title"><span class="veg-dot" aria-hidden="true"></span>Paneer Tikka</div>
+                <div class="item-desc">Cottage cheese marinated with spices, grilled to perfection.</div>
+              </div>
+              <div class="price">₹199</div>
+            </div>
+            <div class="item">
+              <div>
+                <div class="item-title"><span class="nonveg-dot" aria-hidden="true"></span>Chicken 65</div>
+                <div class="item-desc">Crispy, spicy bites with curry leaves and garlic.</div>
+              </div>
+              <div class="price">₹229</div>
+            </div>
+            <div class="item">
+              <div>
+                <div class="item-title"><span class="veg-dot" aria-hidden="true"></span>Veg Manchurian</div>
+                <div class="item-desc">Golden-fried vegetable balls tossed in tangy sauce.</div>
+              </div>
+              <div class="price">₹179</div>
+            </div>
+            <div class="item">
+              <div>
+                <div class="item-title"><span class="nonveg-dot" aria-hidden="true"></span>Pepper Prawns</div>
+                <div class="item-desc">Juicy prawns stir-fried with crushed pepper and onions.</div>
+              </div>
+              <div class="price">₹289</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mains -->
+        <section class="section" aria-labelledby="mains">
+          <h2 id="mains">Mains</h2>
+          <div class="items">
+            <div class="item">
+              <div>
+                <div class="item-title"><span class="veg-dot" aria-hidden="true"></span>Butter Naan (2 pcs)</div>
+                <div class="item-desc">Soft leavened bread brushed with butter.</div>
+              </div>
+              <div class="price">₹79</div>
+            </div>
+            <div class="item">
+              <div>
+                <div class="item-title"><span class="veg-dot" aria-hidden="true"></span>Paneer Butter Masala</div>
+                <div class="item-desc">Creamy tomato gravy with butter and cashews.</div>
+              </div>
+              <div class="price">₹239</div>
+            </div>
+            <div class="item">
+              <div>
+                <div class="item-title"><span class="nonveg-dot" aria-hidden="true"></span>Chicken Biryani</div>
+                <div class="item-desc">Aromatic basmati rice layered with spiced chicken.</div>
+              </div>
+              <div class="price">₹269</div>
+            </div>
+            <div class="item">
+              <div>
+                <div class="item-title"><span class="nonveg-dot" aria-hidden="true"></span>Fish Curry (Coastal)</div>
+                <div class="item-desc">Coconut-based gravy with tamarind & curry leaves.</div>
+              </div>
+              <div class="price">₹299</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Beverages & Desserts -->
+        <section class="section" aria-labelledby="bev">
+          <h2 id="bev">Beverages & Desserts</h2>
+          <div class="items">
+            <div class="item">
+              <div>
+                <div class="item-title">Masala Chaas</div>
+                <div class="item-desc">Cool buttermilk with roasted cumin and herbs.</div>
+              </div>
+              <div class="price">₹69</div>
+            </div>
+            <div class="item">
+              <div>
+                <div class="item-title">Fresh Lime Soda</div>
+                <div class="item-desc">Sweet or salted, your choice.</div>
+              </div>
+              <div class="price">₹79</div>
+            </div>
+            <div class="item">
+              <div>
+                <div class="item-title">Gulab Jamun (2 pcs)</div>
+                <div class="item-desc">Soft milk-solid dumplings soaked in saffron syrup.</div>
+              </div>
+              <div class="price">₹99</div>
+            </div>
+            <div class="item">
+              <div>
+                <div class="item-title">Matka Kulfi</div>
+                <div class="item-desc">Traditional kulfi served in earthen pot.</div>
+              </div>
+              <div class="price">₹129</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div class="footer">
+        <span class="note">Prices include GST • Delivery within 5 km • Open 11 AM – 11 PM</span>
+        <button class="cta" onclick="alert('Online ordering coming soon!')">Order Now</button>
+      </div>
+
+      <p class="fineprint">Need customization? Ask for Jain options, spice levels, or allergy-friendly choices.</p>
+    </div>
+  </div>
+</body>
+</html>
